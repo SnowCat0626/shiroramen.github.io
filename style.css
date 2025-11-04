@@ -1,0 +1,120 @@
+body {
+  margin: 0;
+  font-family: "Noto Sans TC", sans-serif;
+  background-color: #111;
+  color: #fff;
+}
+
+/* 導覽列 */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.75);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  z-index: 10;
+}
+
+.logo {
+  font-size: 1.4rem;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+nav a {
+  color: #ccc;
+  text-decoration: none;
+  margin: 0 1rem;
+  transition: color 0.3s;
+}
+
+nav a:hover, nav a.active {
+  color: #fff;
+}
+
+/* 首頁 Hero */
+.hero {
+  height: 100vh;
+  background: url("image/bg.jpg") center/cover no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  position: relative;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  animation: fadeIn 2s ease;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin: 0;
+  letter-spacing: 3px;
+}
+
+.hero p {
+  margin-top: 0.5rem;
+  font-size: 1.2rem;
+  color: #ddd;
+}
+
+/* 拉麵款式 */
+.menu {
+  padding: 8rem 2rem 4rem;
+  text-align: center;
+}
+
+.menu-items {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.card {
+  background: #1b1b1b;
+  border-radius: 1rem;
+  max-width: 320px;
+  padding: 1rem;
+  box-shadow: 0 0 10px rgba(0,0,0,0.4);
+}
+
+.card img {
+  width: 100%;
+  border-radius: 1rem;
+  object-fit: cover;
+}
+
+.card h3 {
+  margin-top: 1rem;
+  font-size: 1.3rem;
+}
+
+/* 關於我們 */
+.about {
+  padding: 8rem 2rem;
+  text-align: center;
+  max-width: 700px;
+  margin: auto;
+  line-height: 1.8;
+}
+
+/* 動畫 */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
