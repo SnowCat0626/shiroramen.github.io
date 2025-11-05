@@ -85,24 +85,62 @@ nav a:hover, nav a.active {
   gap: 2rem;
 }
 
+/* 卡片動態特效 */
 .card {
   background: #1b1b1b;
   border-radius: 1rem;
   max-width: 320px;
   padding: 1rem;
   box-shadow: 0 0 10px rgba(0,0,0,0.4);
+  overflow: hidden;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  cursor: pointer;
 }
 
+.card:hover {
+  transform: translateY(-10px) scale(1.03);
+  box-shadow: 0 0 25px rgba(255, 200, 100, 0.3);
+}
+
+/* 讓圖片在 hover 時有放大動畫 */
 .card img {
   width: 100%;
   border-radius: 1rem;
   object-fit: cover;
+  transition: transform 0.6s ease;
 }
 
-.card h3 {
-  margin-top: 1rem;
-  font-size: 1.3rem;
+.card:hover img {
+  transform: scale(1.08);
 }
+
+/* 讓文字在 hover 時微亮 */
+.card h3, .card p {
+  transition: color 0.3s ease;
+}
+
+.card:hover h3 {
+  color: #ffdb9a; /* 溫暖金色 */
+}
+
+.card:hover p {
+  color: #eee;
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at top, rgba(255, 220, 150, 0.1), transparent 70%);
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  border-radius: 1rem;
+}
+
+.card:hover::before {
+  opacity: 1;
+}
+
 
 /* 關於我們 */
 .about {
@@ -118,3 +156,21 @@ nav a:hover, nav a.active {
   from { opacity: 0; transform: translateY(30px); }
   to { opacity: 1; transform: translateY(0); }
 }
+
+footer {
+  background-color: #000;
+  color: #aaa;
+  text-align: center;
+  padding: 1rem 0;
+  font-size: 0.9rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  position: relative;
+  bottom: 0;
+  width: 100%;
+}
+
+footer:hover {
+  color: #fff;
+  transition: color 0.3s ease;
+}
+
